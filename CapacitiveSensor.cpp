@@ -91,7 +91,7 @@ long CapacitiveSensor::capacitiveSensor(uint8_t samples)
 		// only calibrate if time is greater than CS_AutocaL_Millis and total is less than 10% of baseline
 		// this is an attempt to keep from calibrating when the sensor is seeing a "touched" signal
 
-		if ( (millis() - lastCal > CS_AutocaL_Millis) && abs(total  - leastTotal) < (int)(.10 * (float)leastTotal) ) {
+		if ( (millis() - lastCal > CS_AutocaL_Millis) && abs((long int)(total  - leastTotal)) < (int)(.10 * (float)leastTotal) ) {
 
 			// Serial.println();               // debugging
 			// Serial.println("auto-calibrate");
